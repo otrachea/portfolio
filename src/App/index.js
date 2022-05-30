@@ -1,10 +1,12 @@
 import { Section, Wrapper, Title, Button, Toggle } from "./style";
-import { ThemeProvider } from "styled-components";
+import Theme from "./Theme";
+
+import { useState } from "react";
 
 import styled from "styled-components";
 import Header from "./Header/";
 
-import { lightTheme, darkTheme } from "../shared/theme/";
+import useDarkMode from "../hooks/useDarkMode";
 
 const Paragraph = styled.p`
   font-size: 14px;
@@ -14,12 +16,10 @@ const Paragraph = styled.p`
 `;
 
 export default function App() {
-  const [theme, toggleTheme] = useDarkMode();
-
-  const themeMode = theme === "light" ? lightTheme : darkTheme;
+  const [themeMode, toggleThemeMode] = useDarkMode();
 
   return (
-    <ThemeProvider theme={themeMode}>
+    <Theme mode={themeMode}>
       <Header />
       <Wrapper>
         <Title>bruhfdsfsf</Title>
@@ -27,7 +27,7 @@ export default function App() {
       <Button>Normal</Button>
       <Section></Section>
       <Paragraph>fdsfds</Paragraph>
-      <Toggle theme={theme} toggleTheme={themeToggle} />
-    </ThemeProvider>
+      <Toggle toggleThemeMode={toggleThemeMode} />
+    </Theme>
   );
 }

@@ -1,12 +1,11 @@
 export const darkTheme = {
   bg: {
-    default: "#FFFFFF",
+    default: "#222222",
     reverse: "#16171A",
     wash: "#FAFAFA",
     divider: "#F6F7F8",
     border: "#EBECED",
     inactive: "#DFE7EF",
-    dark: "#222222",
   },
   primary: {},
   secondary: {},

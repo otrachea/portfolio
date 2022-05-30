@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { darkTheme } from "../shared/theme";
-
 export const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
@@ -10,7 +8,7 @@ export const Title = styled.h1`
 
 export const Wrapper = styled.section`
   padding: 4em;
-  background: ${darkTheme.bg.default};
+  background: ${(props) => props.theme.bg.default};
 `;
 
 export const Button = styled.button`
@@ -37,10 +35,6 @@ export const Paragraph = styled.p`
   margin-bottom: 20px;
 `;
 
-export const Toggle = ({theme,  toggleTheme }) => {
-  return (
-      <Button onClick={toggleTheme} >
-        Switch Theme
-      </Button>
-  );
+export const Toggle = ({ toggleThemeMode }) => {
+  return <Button onClick={toggleThemeMode}>Switch Theme</Button>;
 };
