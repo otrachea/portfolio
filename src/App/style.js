@@ -1,0 +1,46 @@
+import styled from "styled-components";
+
+import { darkTheme } from "../shared/theme";
+
+export const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+export const Wrapper = styled.section`
+  padding: 4em;
+  background: ${darkTheme.bg.default};
+`;
+
+export const Button = styled.button`
+  display: inline-block;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  display: block;
+`;
+
+export const Section = styled.main`
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+`;
+
+export const Paragraph = styled.p`
+  font-size: 14px;
+  line-height: 18px;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+`;
+
+export const Toggle = ({theme,  toggleTheme }) => {
+  return (
+      <Button onClick={toggleTheme} >
+        Switch Theme
+      </Button>
+  );
+};
